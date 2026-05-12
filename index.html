@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Ahmad Romiz - Backend Automation & Data Engineer portfolio. Python, SQL, ETL, automation, internal tools, and data processing systems." />
+  <meta name="description" content="Ahmad Romiz - Backend Automation & Data Engineer portfolio. Python, SQL, ETL, automation, internal tools, and data processing systems." data-i18n-content="metaDescription" />
   <meta name="keywords" content="Ahmad Romiz, Backend Engineer, Data Engineer, ETL Developer, Python Developer, Automation Engineer, SQL, Portfolio" />
   <meta name="author" content="Ahmad Romiz" />
 
-  <meta property="og:title" content="Ahmad Romiz | Backend Automation & Data Engineer" />
-  <meta property="og:description" content="Portfolio of Ahmad Romiz - Backend Automation, ETL, internal systems, and workflow automation." />
+  <meta property="og:title" content="Ahmad Romiz | Backend Automation & Data Engineer" data-i18n-content="metaTitle" />
+  <meta property="og:description" content="Portfolio of Ahmad Romiz - Backend Automation, ETL, internal systems, and workflow automation." data-i18n-content="metaOgDescription" />
   <meta property="og:type" content="website" />
 
-  <title>Ahmad Romiz | Backend Automation & Data Engineer</title>
+  <title data-i18n="metaTitle">Ahmad Romiz | Backend Automation & Data Engineer</title>
 
   <style>
     :root {
@@ -112,6 +112,43 @@
     }
 
     .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .lang-switch {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.72);
+    }
+
+    .lang-btn {
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      padding: 8px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .lang-btn.active {
+      background: linear-gradient(135deg, var(--primary), #67e8f9);
+      color: #020617;
+    }
+
+    .lang-btn:hover {
       color: var(--text);
     }
 
@@ -241,14 +278,124 @@
       font-weight: 600;
     }
 
-    .profile-card {
+    .profile-card{
       position: relative;
-      padding: 26px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-lg);
-      background: linear-gradient(180deg, rgba(17, 24, 39, 0.88), rgba(15, 23, 42, 0.72));
-      box-shadow: var(--shadow);
+      padding: 38px 30px;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 32px;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(17,24,39,0.92),
+          rgba(15,23,42,0.82)
+        );
+
+      box-shadow:
+        0 20px 70px rgba(0,0,0,0.45);
+
       overflow: hidden;
+      text-align: center;
+      backdrop-filter: blur(20px);
+    }
+
+    .profile-card::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(56,189,248,0.18),
+          transparent 35%
+        );
+
+      pointer-events:none;
+    }
+
+    /* FOTO */
+
+    .profile-image{
+      position: relative;
+      width: 190px;
+      height: 190px;
+      margin: 0 auto 26px;
+      border-radius: 50%;
+      overflow: hidden;
+
+      border: 5px solid rgba(255,255,255,0.08);
+
+      box-shadow:
+        0 15px 45px rgba(0,0,0,0.45),
+        0 0 0 8px rgba(56,189,248,0.06);
+
+      background: #0f172a;
+    }
+
+    .profile-image img{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+
+      /* INI PENTING */
+      object-position: center 15%;
+
+      display:block;
+
+      transform: scale(1.03);
+    }
+
+    /* NAMA */
+
+    .profile-card h2{
+      font-size: 34px;
+      line-height: 1.1;
+      letter-spacing: -0.05em;
+      margin-bottom: 14px;
+      color: #fff;
+      font-weight: 800;
+    }
+
+    /* DESKRIPSI */
+
+    .profile-card p{
+      color: #94a3b8;
+      font-size: 15px;
+      line-height: 1.8;
+      max-width: 420px;
+      margin: 0 auto 24px;
+    }
+
+    /* BADGE */
+
+    .badge-wrap{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:10px;
+    }
+
+    .badge{
+      padding: 9px 14px;
+      border-radius: 999px;
+
+      background:
+        rgba(56,189,248,0.08);
+
+      border:
+        1px solid rgba(56,189,248,0.16);
+
+      color:#dbeafe;
+
+      font-size:12px;
+      font-weight:700;
+
+      transition: .2s ease;
+    }
+
+    .badge:hover{
+      transform: translateY(-2px);
+      border-color: rgba(56,189,248,0.35);
+      background: rgba(56,189,248,0.14);
     }
 
     .profile-card::before {
@@ -542,11 +689,26 @@
       .hero {
         padding-top: 56px;
       }
+
+      .nav-actions {
+        margin-left: auto;
+      }
     }
 
     @media (max-width: 560px) {
       .container {
         width: min(100% - 24px, var(--max));
+      }
+
+      .nav-inner {
+        height: auto;
+        padding: 14px 0;
+        flex-wrap: wrap;
+      }
+
+      .nav-actions {
+        width: 100%;
+        justify-content: space-between;
       }
 
       .hero-actions {
@@ -571,13 +733,19 @@
         <span>Ahmad Romiz</span>
       </a>
       <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
+        <a href="#about" data-i18n="navAbout">About</a>
+        <a href="#experience" data-i18n="navExperience">Experience</a>
+        <a href="#projects" data-i18n="navProjects">Projects</a>
+        <a href="#skills" data-i18n="navSkills">Skills</a>
+        <a href="#contact" data-i18n="navContact">Contact</a>
       </div>
-      <a class="btn btn-primary" href="mailto:ahmadromiz01@gmail.com">Hire Me</a>
+      <div class="nav-actions">
+        <div class="lang-switch" aria-label="Language Switcher">
+          <button class="lang-btn active" type="button" data-lang="en">EN</button>
+          <button class="lang-btn" type="button" data-lang="id">ID</button>
+        </div>
+        <a class="btn btn-primary" href="mailto:ahmadromiz01@gmail.com" data-i18n="hireMe">Hire Me</a>
+      </div>
     </div>
   </nav>
 
@@ -585,59 +753,64 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow"><span class="pulse"></span> Open for Backend / Data Engineering Roles</div>
-          <h1>Backend Automation & <span class="gradient-text">Data Engineer</span></h1>
-          <p class="hero-lead">
+          <div class="eyebrow"><span class="pulse"></span> <span data-i18n="heroEyebrow">Open for Backend / Data Engineering Roles</span></div>
+          <h1><span data-i18n="heroTitleStart">Backend Automation &</span> <span class="gradient-text" data-i18n="heroTitleEnd">Data Engineer</span></h1>
+          <p class="hero-lead" data-i18n="heroLead">
             I build internal systems, ETL pipelines, workflow automation, and data processing tools that turn manual operational work into reliable, measurable, and scalable systems.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#projects">View Projects</a>
-            <a class="btn btn-ghost" href="mailto:ahmadromiz01@gmail.com">Contact Me</a>
+            <a class="btn btn-primary" href="#projects" data-i18n="viewProjects">View Projects</a>
+            <a class="btn btn-ghost" href="mailto:ahmadromiz01@gmail.com" data-i18n="contactMe">Contact Me</a>
             <a class="btn btn-ghost" href="https://linkedin.com/in/ahmadromiz" target="_blank" rel="noopener">LinkedIn</a>
           </div>
 
           <div class="quick-stats">
             <div class="stat">
               <strong>2w → 2h</strong>
-              <span>Manual process reduced through automation</span>
+              <span data-i18n="stat1">Manual process reduced through automation</span>
             </div>
             <div class="stat">
               <strong>80%</strong>
-              <span>Downtime reduction through monitoring</span>
+              <span data-i18n="stat2">Downtime reduction through monitoring</span>
             </div>
             <div class="stat">
               <strong>90%</strong>
-              <span>Error reduction via validation flow</span>
+              <span data-i18n="stat3">Error reduction via validation flow</span>
             </div>
           </div>
         </div>
 
-        <aside class="profile-card">
-          <div class="avatar">AR</div>
-          <h2>Ahmad Romiz</h2>
-          <p>
-            Operational System Analyst at Pelita Air, focused on backend automation, ETL/data processing, secure internal tools, and workflow optimization.
-          </p>
-          <div class="badge-wrap">
-            <span class="badge">Python</span>
-            <span class="badge">SQL</span>
-            <span class="badge">ETL</span>
-            <span class="badge">Backend</span>
-            <span class="badge">Automation</span>
-            <span class="badge">Data Validation</span>
-            <span class="badge">Internal Tools</span>
-            <span class="badge">Monitoring</span>
-          </div>
-        </aside>
+      <aside class="profile-card">
+        <div class="profile-image">
+          <img src="assets/profile.jpg" alt="Ahmad Romiz">
+        </div>
+
+        <h2>Ahmad Romiz</h2>
+
+        <p class="profile-desc" data-i18n="profileDesc">
+          Operational System Analyst at Pelita Air focused on backend automation,
+          ETL pipelines, secure internal systems, and workflow optimization.
+        </p>
+
+        <div class="badge-wrap">
+          <span class="badge">Python</span>
+          <span class="badge">SQL</span>
+          <span class="badge">ETL</span>
+          <span class="badge">Backend</span>
+          <span class="badge">Automation</span>
+          <span class="badge">Monitoring</span>
+        </div>
+
+      </aside>
       </div>
     </section>
 
     <section id="about">
       <div class="container">
         <div class="section-head">
-          <div class="section-label">About</div>
-          <h3>From IT operations to backend and data automation.</h3>
-          <p class="section-desc">
+          <div class="section-label" data-i18n="aboutLabel">About</div>
+          <h3 data-i18n="aboutTitle">From IT operations to backend and data automation.</h3>
+          <p class="section-desc" data-i18n="aboutDesc">
             My work focuses on solving repetitive operational problems using backend systems, automation scripts, structured data processing, and reliable internal tools.
           </p>
         </div>
@@ -645,18 +818,18 @@
         <div class="grid-3">
           <div class="card">
             <div class="card-icon">⚙️</div>
-            <h4>Backend Automation</h4>
-            <p>Designing backend workflows, scripts, and internal applications to reduce manual work and improve operational speed.</p>
+            <h4 data-i18n="aboutCard1Title">Backend Automation</h4>
+            <p data-i18n="aboutCard1Desc">Designing backend workflows, scripts, and internal applications to reduce manual work and improve operational speed.</p>
           </div>
           <div class="card">
             <div class="card-icon">🔁</div>
-            <h4>ETL & Data Processing</h4>
-            <p>Building data pipelines, validation flows, reconciliation logic, and reporting-ready datasets using Python and SQL.</p>
+            <h4 data-i18n="aboutCard2Title">ETL & Data Processing</h4>
+            <p data-i18n="aboutCard2Desc">Building data pipelines, validation flows, reconciliation logic, and reporting-ready datasets using Python and SQL.</p>
           </div>
           <div class="card">
             <div class="card-icon">🛡️</div>
-            <h4>Reliable Internal Systems</h4>
-            <p>Improving system reliability through monitoring, backup automation, controlled access, documentation, and secure data handling.</p>
+            <h4 data-i18n="aboutCard3Title">Reliable Internal Systems</h4>
+            <p data-i18n="aboutCard3Desc">Improving system reliability through monitoring, backup automation, controlled access, documentation, and secure data handling.</p>
           </div>
         </div>
       </div>
@@ -665,22 +838,22 @@
     <section id="experience">
       <div class="container">
         <div class="section-head">
-          <div class="section-label">Experience</div>
-          <h3>Professional journey.</h3>
-          <p class="section-desc">Focused on IT operations, system analysis, backend automation, and data-driven process improvement.</p>
+          <div class="section-label" data-i18n="experienceLabel">Experience</div>
+          <h3 data-i18n="experienceTitle">Professional journey.</h3>
+          <p class="section-desc" data-i18n="experienceDesc">Focused on IT operations, system analysis, backend automation, and data-driven process improvement.</p>
         </div>
 
         <div class="timeline">
           <article class="timeline-item">
             <div class="timeline-date">Jul 2024 — Present</div>
             <div class="timeline-content">
-              <h4>Operational System Analyst</h4>
+              <h4 data-i18n="exp1Title">Operational System Analyst</h4>
               <div class="company">PT Pelita Air Service · Jakarta</div>
               <ul>
-                <li>Designed backend automation and monitoring scripts to improve system reliability and reduce downtime.</li>
-                <li>Developed automated data processing workflows for operational and financial reporting.</li>
-                <li>Built internal backend systems for workflow automation, data validation, and data reconciliation.</li>
-                <li>Created SQL-based processing workflows for cross-system data synchronization and reporting.</li>
+                <li data-i18n="exp1Item1">Designed backend automation and monitoring scripts to improve system reliability and reduce downtime.</li>
+                <li data-i18n="exp1Item2">Developed automated data processing workflows for operational and financial reporting.</li>
+                <li data-i18n="exp1Item3">Built internal backend systems for workflow automation, data validation, and data reconciliation.</li>
+                <li data-i18n="exp1Item4">Created SQL-based processing workflows for cross-system data synchronization and reporting.</li>
               </ul>
             </div>
           </article>
@@ -688,12 +861,12 @@
           <article class="timeline-item">
             <div class="timeline-date">Jun 2023 — Jun 2024</div>
             <div class="timeline-content">
-              <h4>IT Staff</h4>
+              <h4 data-i18n="exp2Title">IT Staff</h4>
               <div class="company">PT Pelita Air Service · Jakarta</div>
               <ul>
-                <li>Developed and maintained internal fullstack systems using Python, PHP, SQL, and database-driven workflows.</li>
-                <li>Built automation scripts for backup, monitoring, reporting, and repetitive operational tasks.</li>
-                <li>Performed troubleshooting, preventive maintenance, backup routines, and system health checks.</li>
+                <li data-i18n="exp2Item1">Developed and maintained internal fullstack systems using Python, PHP, SQL, and database-driven workflows.</li>
+                <li data-i18n="exp2Item2">Built automation scripts for backup, monitoring, reporting, and repetitive operational tasks.</li>
+                <li data-i18n="exp2Item3">Performed troubleshooting, preventive maintenance, backup routines, and system health checks.</li>
               </ul>
             </div>
           </article>
@@ -701,11 +874,11 @@
           <article class="timeline-item">
             <div class="timeline-date">Jan 2022 — Apr 2023</div>
             <div class="timeline-content">
-              <h4>Programming Instructor</h4>
+              <h4 data-i18n="exp3Title">Programming Instructor</h4>
               <div class="company">Bosiz Ngoding · Remote</div>
               <ul>
-                <li>Taught programming fundamentals including Python, C++, HTML, CSS, Ruby, and Ruby on Rails.</li>
-                <li>Designed project-based coding materials and practical exercises for students.</li>
+                <li data-i18n="exp3Item1">Taught programming fundamentals including Python, C++, HTML, CSS, Ruby, and Ruby on Rails.</li>
+                <li data-i18n="exp3Item2">Designed project-based coding materials and practical exercises for students.</li>
               </ul>
             </div>
           </article>
@@ -716,25 +889,25 @@
     <section id="projects">
       <div class="container">
         <div class="section-head">
-          <div class="section-label">Selected Projects</div>
-          <h3>Systems that reduce manual work.</h3>
-          <p class="section-desc">A selection of backend, automation, and data processing projects based on real operational use cases.</p>
+          <div class="section-label" data-i18n="projectsLabel">Selected Projects</div>
+          <h3 data-i18n="projectsTitle">Systems that reduce manual work.</h3>
+          <p class="section-desc" data-i18n="projectsDesc">A selection of backend, automation, and data processing projects based on real operational use cases.</p>
         </div>
 
         <div class="grid-2">
           <article class="card project-card">
             <div class="project-top">
               <div>
-                <h4>Financial Journal Automation System</h4>
-                <p>Backend automation for validating, processing, and summarizing operational financial journal data.</p>
+                <h4 data-i18n="project1Title">Financial Journal Automation System</h4>
+                <p data-i18n="project1Desc">Backend automation for validating, processing, and summarizing operational financial journal data.</p>
               </div>
               <div class="project-number">01</div>
             </div>
-            <div class="impact">Impact: Processing reduced from 2 weeks to 1–2 hours</div>
+            <div class="impact" data-i18n="project1Impact">Impact: Processing reduced from 2 weeks to 1–2 hours</div>
             <ul>
-              <li>Automated debit-credit balance checking and subtotal validation.</li>
-              <li>Generated structured output files and error logs for faster review.</li>
-              <li>Reduced repetitive manual checking and improved reporting reliability.</li>
+              <li data-i18n="project1Item1">Automated debit-credit balance checking and subtotal validation.</li>
+              <li data-i18n="project1Item2">Generated structured output files and error logs for faster review.</li>
+              <li data-i18n="project1Item3">Reduced repetitive manual checking and improved reporting reliability.</li>
             </ul>
             <div class="tech">
               <span>Python</span><span>SQL</span><span>Excel Processing</span><span>Data Validation</span>
@@ -744,16 +917,16 @@
           <article class="card project-card">
             <div class="project-top">
               <div>
-                <h4>ETL & Data Integration Workflow</h4>
-                <p>Data pipeline for extracting, transforming, validating, and loading operational data into reporting-ready formats.</p>
+                <h4 data-i18n="project2Title">ETL & Data Integration Workflow</h4>
+                <p data-i18n="project2Desc">Data pipeline for extracting, transforming, validating, and loading operational data into reporting-ready formats.</p>
               </div>
               <div class="project-number">02</div>
             </div>
-            <div class="impact">Impact: Cleaner data flow for operational reporting</div>
+            <div class="impact" data-i18n="project2Impact">Impact: Cleaner data flow for operational reporting</div>
             <ul>
-              <li>Created SQL-based transformation and synchronization logic.</li>
-              <li>Improved data consistency using automated validation rules.</li>
-              <li>Prepared reliable datasets for dashboards and decision-making.</li>
+              <li data-i18n="project2Item1">Created SQL-based transformation and synchronization logic.</li>
+              <li data-i18n="project2Item2">Improved data consistency using automated validation rules.</li>
+              <li data-i18n="project2Item3">Prepared reliable datasets for dashboards and decision-making.</li>
             </ul>
             <div class="tech">
               <span>Python</span><span>SQL</span><span>Pandas</span><span>PostgreSQL</span><span>MySQL</span>
@@ -763,16 +936,16 @@
           <article class="card project-card">
             <div class="project-top">
               <div>
-                <h4>Internal Link & QR Code Generator</h4>
-                <p>Internal system for link management, QR generation, and simplified digital access.</p>
+                <h4 data-i18n="project3Title">Internal Link & QR Code Generator</h4>
+                <p data-i18n="project3Desc">Internal system for link management, QR generation, and simplified digital access.</p>
               </div>
               <div class="project-number">03</div>
             </div>
-            <div class="impact">Impact: Faster preparation of digital links and QR assets</div>
+            <div class="impact" data-i18n="project3Impact">Impact: Faster preparation of digital links and QR assets</div>
             <ul>
-              <li>Built backend logic for link redirection and QR code generation.</li>
-              <li>Stored link data in a structured database workflow.</li>
-              <li>Reduced manual work for internal access and digital campaigns.</li>
+              <li data-i18n="project3Item1">Built backend logic for link redirection and QR code generation.</li>
+              <li data-i18n="project3Item2">Stored link data in a structured database workflow.</li>
+              <li data-i18n="project3Item3">Reduced manual work for internal access and digital campaigns.</li>
             </ul>
             <div class="tech">
               <span>Python Flask</span><span>PHP</span><span>SQL</span><span>QR Library</span>
@@ -782,16 +955,16 @@
           <article class="card project-card">
             <div class="project-top">
               <div>
-                <h4>System Monitoring & Auto Backup</h4>
-                <p>Automation scripts for monitoring, scheduled backup, and recurring operational checks.</p>
+                <h4 data-i18n="project4Title">System Monitoring & Auto Backup</h4>
+                <p data-i18n="project4Desc">Automation scripts for monitoring, scheduled backup, and recurring operational checks.</p>
               </div>
               <div class="project-number">04</div>
             </div>
-            <div class="impact">Impact: Earlier issue detection and stronger data protection</div>
+            <div class="impact" data-i18n="project4Impact">Impact: Earlier issue detection and stronger data protection</div>
             <ul>
-              <li>Automated monitoring workflows for system health checking.</li>
-              <li>Implemented scheduled backup routines and preventive checks.</li>
-              <li>Supported faster response to operational issues.</li>
+              <li data-i18n="project4Item1">Automated monitoring workflows for system health checking.</li>
+              <li data-i18n="project4Item2">Implemented scheduled backup routines and preventive checks.</li>
+              <li data-i18n="project4Item3">Supported faster response to operational issues.</li>
             </ul>
             <div class="tech">
               <span>Python</span><span>Selenium</span><span>Scheduler</span><span>Backup Script</span>
@@ -804,14 +977,14 @@
     <section id="skills">
       <div class="container">
         <div class="section-head">
-          <div class="section-label">Skills</div>
-          <h3>Technical stack.</h3>
-          <p class="section-desc">Tools and technologies I use to build backend systems, data pipelines, automation, and reporting workflows.</p>
+          <div class="section-label" data-i18n="skillsLabel">Skills</div>
+          <h3 data-i18n="skillsTitle">Technical stack.</h3>
+          <p class="section-desc" data-i18n="skillsDesc">Tools and technologies I use to build backend systems, data pipelines, automation, and reporting workflows.</p>
         </div>
 
         <div class="grid-2">
           <div class="card">
-            <h4>Engineering Skills</h4>
+            <h4 data-i18n="engineeringSkills">Engineering Skills</h4>
             <div class="skills-cloud" style="margin-top: 18px;">
               <span class="skill-pill">Python</span>
               <span class="skill-pill">PHP</span>
@@ -826,7 +999,7 @@
             </div>
           </div>
           <div class="card">
-            <h4>Data & Automation Skills</h4>
+            <h4 data-i18n="dataSkills">Data & Automation Skills</h4>
             <div class="skills-cloud" style="margin-top: 18px;">
               <span class="skill-pill">ETL Pipeline</span>
               <span class="skill-pill">Data Validation</span>
@@ -848,18 +1021,18 @@
       <div class="container">
         <div class="grid-2">
           <div class="card">
-            <div class="section-label">Education</div>
+            <div class="section-label" data-i18n="educationLabel">Education</div>
             <h4>Universitas Teknologi Yogyakarta</h4>
-            <p>Bachelor of Informatics / Computer Science</p>
-            <p>Graduated: 2022 · GPA: 3.79 / 4.00</p>
+            <p data-i18n="educationDegree">Bachelor of Informatics / Computer Science</p>
+            <p data-i18n="educationMeta">Graduated: 2022 · GPA: 3.79 / 4.00</p>
           </div>
           <div class="card">
-            <div class="section-label">Certifications</div>
+            <div class="section-label" data-i18n="certificationsLabel">Certifications</div>
             <ul>
-              <li>Cybersecurity Fundamental — Cynnex / PGN COM</li>
-              <li>Full Stack Developer with Ruby — Digitalent Kominfo</li>
-              <li>Data Analysis for Retail: Sales Performance Report — DQLab</li>
-              <li>Cybersecurity Awareness & Tools — DQLab</li>
+              <li data-i18n="cert1">Cybersecurity Fundamental — Cynnex / PGN COM</li>
+              <li data-i18n="cert2">Full Stack Developer with Ruby — Digitalent Kominfo</li>
+              <li data-i18n="cert3">Data Analysis for Retail: Sales Performance Report — DQLab</li>
+              <li data-i18n="cert4">Cybersecurity Awareness & Tools — DQLab</li>
             </ul>
           </div>
         </div>
@@ -869,15 +1042,15 @@
     <section id="contact">
       <div class="container">
         <div class="cta">
-          <div class="section-label">Contact</div>
-          <h3>Ready to build reliable backend and data automation systems.</h3>
-          <p>
+          <div class="section-label" data-i18n="contactLabel">Contact</div>
+          <h3 data-i18n="contactTitle">Ready to build reliable backend and data automation systems.</h3>
+          <p data-i18n="contactDesc">
             I am open to Backend Automation Engineer, Data Engineer, ETL Developer, Backend Developer Python, Data Integration Engineer, and Internal Tools Developer roles.
           </p>
           <div class="hero-actions" style="justify-content: center; margin-bottom: 0;">
-            <a class="btn btn-primary" href="mailto:ahmadromiz01@gmail.com">Email Me</a>
+            <a class="btn btn-primary" href="mailto:ahmadromiz01@gmail.com" data-i18n="emailMe">Email Me</a>
             <a class="btn btn-ghost" href="https://linkedin.com/in/ahmadromiz" target="_blank" rel="noopener">LinkedIn</a>
-            <a class="btn btn-ghost" href="https://github.com/ahmadromiz" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn btn-ghost" href="https://github.com/ahmadromiz1" target="_blank" rel="noopener">GitHub</a>
           </div>
         </div>
       </div>
@@ -886,8 +1059,224 @@
 
   <footer>
     <div class="container">
-      © 2026 Ahmad Romiz. Built for GitHub Pages.
+      <span data-i18n="footerText">© 2026 Ahmad Romiz. Built for GitHub Pages.</span>
     </div>
   </footer>
+
+  <script>
+    const translations = {
+      en: {
+        metaTitle: "Ahmad Romiz | Backend Automation & Data Engineer",
+        metaDescription: "Ahmad Romiz - Backend Automation & Data Engineer portfolio. Python, SQL, ETL, automation, internal tools, and data processing systems.",
+        metaOgDescription: "Portfolio of Ahmad Romiz - Backend Automation, ETL, internal systems, and workflow automation.",
+        navAbout: "About",
+        navExperience: "Experience",
+        navProjects: "Projects",
+        navSkills: "Skills",
+        navContact: "Contact",
+        hireMe: "Hire Me",
+        heroEyebrow: "Open for Backend / Data Engineering Roles",
+        heroTitleStart: "Backend Automation &",
+        heroTitleEnd: "Data Engineer",
+        heroLead: "I build internal systems, ETL pipelines, workflow automation, and data processing tools that turn manual operational work into reliable, measurable, and scalable systems.",
+        viewProjects: "View Projects",
+        contactMe: "Contact Me",
+        stat1: "Manual process reduced through automation",
+        stat2: "Downtime reduction through monitoring",
+        stat3: "Error reduction via validation flow",
+        profileDesc: "Operational System Analyst at Pelita Air focused on backend automation, ETL pipelines, secure internal systems, and workflow optimization.",
+        aboutLabel: "About",
+        aboutTitle: "From IT operations to backend and data automation.",
+        aboutDesc: "My work focuses on solving repetitive operational problems using backend systems, automation scripts, structured data processing, and reliable internal tools.",
+        aboutCard1Title: "Backend Automation",
+        aboutCard1Desc: "Designing backend workflows, scripts, and internal applications to reduce manual work and improve operational speed.",
+        aboutCard2Title: "ETL & Data Processing",
+        aboutCard2Desc: "Building data pipelines, validation flows, reconciliation logic, and reporting-ready datasets using Python and SQL.",
+        aboutCard3Title: "Reliable Internal Systems",
+        aboutCard3Desc: "Improving system reliability through monitoring, backup automation, controlled access, documentation, and secure data handling.",
+        experienceLabel: "Experience",
+        experienceTitle: "Professional journey.",
+        experienceDesc: "Focused on IT operations, system analysis, backend automation, and data-driven process improvement.",
+        exp1Title: "Operational System Analyst",
+        exp1Item1: "Designed backend automation and monitoring scripts to improve system reliability and reduce downtime.",
+        exp1Item2: "Developed automated data processing workflows for operational and financial reporting.",
+        exp1Item3: "Built internal backend systems for workflow automation, data validation, and data reconciliation.",
+        exp1Item4: "Created SQL-based processing workflows for cross-system data synchronization and reporting.",
+        exp2Title: "IT Staff",
+        exp2Item1: "Developed and maintained internal fullstack systems using Python, PHP, SQL, and database-driven workflows.",
+        exp2Item2: "Built automation scripts for backup, monitoring, reporting, and repetitive operational tasks.",
+        exp2Item3: "Performed troubleshooting, preventive maintenance, backup routines, and system health checks.",
+        exp3Title: "Programming Instructor",
+        exp3Item1: "Taught programming fundamentals including Python, C++, HTML, CSS, Ruby, and Ruby on Rails.",
+        exp3Item2: "Designed project-based coding materials and practical exercises for students.",
+        projectsLabel: "Selected Projects",
+        projectsTitle: "Systems that reduce manual work.",
+        projectsDesc: "A selection of backend, automation, and data processing projects based on real operational use cases.",
+        project1Title: "Financial Journal Automation System",
+        project1Desc: "Backend automation for validating, processing, and summarizing operational financial journal data.",
+        project1Impact: "Impact: Processing reduced from 2 weeks to 1–2 hours",
+        project1Item1: "Automated debit-credit balance checking and subtotal validation.",
+        project1Item2: "Generated structured output files and error logs for faster review.",
+        project1Item3: "Reduced repetitive manual checking and improved reporting reliability.",
+        project2Title: "ETL & Data Integration Workflow",
+        project2Desc: "Data pipeline for extracting, transforming, validating, and loading operational data into reporting-ready formats.",
+        project2Impact: "Impact: Cleaner data flow for operational reporting",
+        project2Item1: "Created SQL-based transformation and synchronization logic.",
+        project2Item2: "Improved data consistency using automated validation rules.",
+        project2Item3: "Prepared reliable datasets for dashboards and decision-making.",
+        project3Title: "Internal Link & QR Code Generator",
+        project3Desc: "Internal system for link management, QR generation, and simplified digital access.",
+        project3Impact: "Impact: Faster preparation of digital links and QR assets",
+        project3Item1: "Built backend logic for link redirection and QR code generation.",
+        project3Item2: "Stored link data in a structured database workflow.",
+        project3Item3: "Reduced manual work for internal access and digital campaigns.",
+        project4Title: "System Monitoring & Auto Backup",
+        project4Desc: "Automation scripts for monitoring, scheduled backup, and recurring operational checks.",
+        project4Impact: "Impact: Earlier issue detection and stronger data protection",
+        project4Item1: "Automated monitoring workflows for system health checking.",
+        project4Item2: "Implemented scheduled backup routines and preventive checks.",
+        project4Item3: "Supported faster response to operational issues.",
+        skillsLabel: "Skills",
+        skillsTitle: "Technical stack.",
+        skillsDesc: "Tools and technologies I use to build backend systems, data pipelines, automation, and reporting workflows.",
+        engineeringSkills: "Engineering Skills",
+        dataSkills: "Data & Automation Skills",
+        educationLabel: "Education",
+        educationDegree: "Bachelor of Informatics / Computer Science",
+        educationMeta: "Graduated: 2022 · GPA: 3.79 / 4.00",
+        certificationsLabel: "Certifications",
+        cert1: "Cybersecurity Fundamental — Cynnex / PGN COM",
+        cert2: "Full Stack Developer with Ruby — Digitalent Kominfo",
+        cert3: "Data Analysis for Retail: Sales Performance Report — DQLab",
+        cert4: "Cybersecurity Awareness & Tools — DQLab",
+        contactLabel: "Contact",
+        contactTitle: "Ready to build reliable backend and data automation systems.",
+        contactDesc: "I am open to Backend Automation Engineer, Data Engineer, ETL Developer, Backend Developer Python, Data Integration Engineer, and Internal Tools Developer roles.",
+        emailMe: "Email Me",
+        footerText: "© 2026 Ahmad Romiz. Built for GitHub Pages."
+      },
+      id: {
+        metaTitle: "Ahmad Romiz | Backend Automation & Data Engineer",
+        metaDescription: "Portofolio Ahmad Romiz - Backend Automation & Data Engineer. Python, SQL, ETL, otomasi, tools internal, dan sistem pengolahan data.",
+        metaOgDescription: "Portofolio Ahmad Romiz - Backend Automation, ETL, sistem internal, dan otomasi workflow.",
+        navAbout: "Tentang",
+        navExperience: "Pengalaman",
+        navProjects: "Proyek",
+        navSkills: "Keahlian",
+        navContact: "Kontak",
+        hireMe: "Hubungi Saya",
+        heroEyebrow: "Terbuka untuk posisi Backend / Data Engineering",
+        heroTitleStart: "Backend Automation &",
+        heroTitleEnd: "Data Engineer",
+        heroLead: "Saya membangun sistem internal, pipeline ETL, otomasi workflow, dan alat pengolahan data yang mengubah pekerjaan operasional manual menjadi sistem yang andal, terukur, dan scalable.",
+        viewProjects: "Lihat Proyek",
+        contactMe: "Kontak Saya",
+        stat1: "Proses manual dipangkas melalui otomasi",
+        stat2: "Penurunan downtime lewat monitoring",
+        stat3: "Pengurangan error melalui alur validasi",
+        profileDesc: "Operational System Analyst di Pelita Air yang berfokus pada backend automation, pipeline ETL, sistem internal yang aman, dan optimasi workflow.",
+        aboutLabel: "Tentang",
+        aboutTitle: "Dari operasional IT ke backend dan otomasi data.",
+        aboutDesc: "Fokus pekerjaan saya adalah menyelesaikan masalah operasional berulang menggunakan sistem backend, script otomasi, pengolahan data terstruktur, dan tools internal yang andal.",
+        aboutCard1Title: "Backend Automation",
+        aboutCard1Desc: "Merancang workflow backend, script, dan aplikasi internal untuk mengurangi pekerjaan manual dan meningkatkan kecepatan operasional.",
+        aboutCard2Title: "ETL & Pengolahan Data",
+        aboutCard2Desc: "Membangun pipeline data, alur validasi, logika rekonsiliasi, dan dataset siap lapor menggunakan Python dan SQL.",
+        aboutCard3Title: "Sistem Internal Andal",
+        aboutCard3Desc: "Meningkatkan keandalan sistem melalui monitoring, otomasi backup, kontrol akses, dokumentasi, dan pengelolaan data yang aman.",
+        experienceLabel: "Pengalaman",
+        experienceTitle: "Perjalanan profesional.",
+        experienceDesc: "Berfokus pada operasional IT, analisis sistem, backend automation, dan peningkatan proses berbasis data.",
+        exp1Title: "Operational System Analyst",
+        exp1Item1: "Merancang script backend automation dan monitoring untuk meningkatkan keandalan sistem serta mengurangi downtime.",
+        exp1Item2: "Mengembangkan workflow pengolahan data otomatis untuk pelaporan operasional dan keuangan.",
+        exp1Item3: "Membangun sistem backend internal untuk otomasi workflow, validasi data, dan rekonsiliasi data.",
+        exp1Item4: "Membuat workflow pemrosesan berbasis SQL untuk sinkronisasi data lintas sistem dan pelaporan.",
+        exp2Title: "IT Staff",
+        exp2Item1: "Mengembangkan dan memelihara sistem internal fullstack menggunakan Python, PHP, SQL, dan workflow berbasis database.",
+        exp2Item2: "Membangun script otomasi untuk backup, monitoring, reporting, dan tugas operasional berulang.",
+        exp2Item3: "Melakukan troubleshooting, preventive maintenance, rutinitas backup, dan pengecekan kesehatan sistem.",
+        exp3Title: "Instruktur Pemrograman",
+        exp3Item1: "Mengajar dasar-dasar pemrograman termasuk Python, C++, HTML, CSS, Ruby, dan Ruby on Rails.",
+        exp3Item2: "Menyusun materi coding berbasis proyek dan latihan praktik untuk siswa.",
+        projectsLabel: "Proyek Pilihan",
+        projectsTitle: "Sistem yang mengurangi pekerjaan manual.",
+        projectsDesc: "Pilihan proyek backend, otomasi, dan pengolahan data berdasarkan kebutuhan operasional nyata.",
+        project1Title: "Sistem Otomasi Jurnal Keuangan",
+        project1Desc: "Otomasi backend untuk memvalidasi, memproses, dan merangkum data jurnal keuangan operasional.",
+        project1Impact: "Dampak: Proses turun dari 2 minggu menjadi 1–2 jam",
+        project1Item1: "Mengotomatiskan pengecekan keseimbangan debit-kredit dan validasi subtotal.",
+        project1Item2: "Menghasilkan file output terstruktur dan log error untuk review yang lebih cepat.",
+        project1Item3: "Mengurangi pengecekan manual berulang dan meningkatkan keandalan pelaporan.",
+        project2Title: "Workflow ETL & Integrasi Data",
+        project2Desc: "Pipeline data untuk ekstraksi, transformasi, validasi, dan loading data operasional ke format siap lapor.",
+        project2Impact: "Dampak: Alur data operasional menjadi lebih rapi",
+        project2Item1: "Membuat logika transformasi dan sinkronisasi berbasis SQL.",
+        project2Item2: "Meningkatkan konsistensi data dengan aturan validasi otomatis.",
+        project2Item3: "Menyiapkan dataset andal untuk dashboard dan pengambilan keputusan.",
+        project3Title: "Generator Link Internal & QR Code",
+        project3Desc: "Sistem internal untuk manajemen link, pembuatan QR, dan penyederhanaan akses digital.",
+        project3Impact: "Dampak: Persiapan link digital dan aset QR lebih cepat",
+        project3Item1: "Membangun logika backend untuk redirection link dan pembuatan QR code.",
+        project3Item2: "Menyimpan data link dalam workflow database yang terstruktur.",
+        project3Item3: "Mengurangi pekerjaan manual untuk akses internal dan kampanye digital.",
+        project4Title: "Monitoring Sistem & Auto Backup",
+        project4Desc: "Script otomasi untuk monitoring, backup terjadwal, dan pengecekan operasional berkala.",
+        project4Impact: "Dampak: Deteksi masalah lebih awal dan perlindungan data lebih kuat",
+        project4Item1: "Mengotomatiskan workflow monitoring untuk pengecekan kesehatan sistem.",
+        project4Item2: "Menerapkan rutinitas backup terjadwal dan pengecekan preventif.",
+        project4Item3: "Mendukung respons yang lebih cepat terhadap masalah operasional.",
+        skillsLabel: "Keahlian",
+        skillsTitle: "Teknologi utama.",
+        skillsDesc: "Tools dan teknologi yang saya gunakan untuk membangun sistem backend, pipeline data, otomasi, dan workflow reporting.",
+        engineeringSkills: "Keahlian Engineering",
+        dataSkills: "Keahlian Data & Otomasi",
+        educationLabel: "Pendidikan",
+        educationDegree: "Sarjana Informatika / Ilmu Komputer",
+        educationMeta: "Lulus: 2022 · IPK: 3.79 / 4.00",
+        certificationsLabel: "Sertifikasi",
+        cert1: "Fundamental Cybersecurity — Cynnex / PGN COM",
+        cert2: "Full Stack Developer with Ruby — Digitalent Kominfo",
+        cert3: "Data Analysis for Retail: Sales Performance Report — DQLab",
+        cert4: "Cybersecurity Awareness & Tools — DQLab",
+        contactLabel: "Kontak",
+        contactTitle: "Siap membangun sistem backend dan otomasi data yang andal.",
+        contactDesc: "Saya terbuka untuk posisi Backend Automation Engineer, Data Engineer, ETL Developer, Backend Developer Python, Data Integration Engineer, dan Internal Tools Developer.",
+        emailMe: "Email Saya",
+        footerText: "© 2026 Ahmad Romiz. Dibuat untuk GitHub Pages."
+      }
+    };
+
+    const i18nNodes = document.querySelectorAll("[data-i18n]");
+    const i18nContentNodes = document.querySelectorAll("[data-i18n-content]");
+    const langButtons = document.querySelectorAll(".lang-btn");
+
+    function setLanguage(lang) {
+      const selected = translations[lang] ? lang : "en";
+      document.documentElement.lang = selected;
+      i18nNodes.forEach((node) => {
+        const key = node.dataset.i18n;
+        if (translations[selected][key]) {
+          node.textContent = translations[selected][key];
+        }
+      });
+      i18nContentNodes.forEach((node) => {
+        const key = node.dataset.i18nContent;
+        if (translations[selected][key]) {
+          node.setAttribute("content", translations[selected][key]);
+        }
+      });
+      langButtons.forEach((button) => {
+        button.classList.toggle("active", button.dataset.lang === selected);
+      });
+      localStorage.setItem("preferredLanguage", selected);
+    }
+
+    langButtons.forEach((button) => {
+      button.addEventListener("click", () => setLanguage(button.dataset.lang));
+    });
+
+    setLanguage(localStorage.getItem("preferredLanguage") || "en");
+  </script>
 </body>
 </html>
