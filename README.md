@@ -6,8 +6,9 @@ Static bilingual portfolio for Ahmad Romiz, currently a Solution Analyst at Bank
 
 ## Files
 
-- `index.html`, `index-id.html`: Indonesian portfolio.
-- `index-en.html`: English portfolio.
+- `index.html`: English portfolio (default landing page).
+- `index-en.html`: English alias.
+- `index-id.html`: Indonesian portfolio.
 - `portfolio.css`: responsive styles, project flows, career timeline, and reduced motion support.
 - `portfolio-data.js`: bilingual project details and public repository URLs.
 - `portfolio.js`: filtering, native dialog interactions, and current year.
