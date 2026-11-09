@@ -66,21 +66,24 @@
     title.id = 'dialog-title';
     const tags = element('div', '', 'tags');
     project.tech.forEach(tech => tags.append(element('span', tech)));
-    content.append(title, element('p', project.summary[languageIndex]), tags);
-    appendSection(text('Tantangan', 'The challenge'), project.problem[languageIndex]);
-    appendSection(text('Pendekatan & solusi', 'Approach & solution'), project.solution[languageIndex]);
-    content.append(element('h3', text('Yang dikerjakan', 'What it covers')));
+    content.append(title);
+    if (project.inProgress) content.append(element('span', 'In Progress', 'project-status-badge'));
+    content.append(element('p', project.summary[languageIndex]), tags);
+    appendSection(project.headings?.problem?.[languageIndex] || text('Tantangan', 'The challenge'), project.problem[languageIndex]);
+    appendSection(project.headings?.solution?.[languageIndex] || text('Pendekatan & solusi', 'Approach & solution'), project.solution[languageIndex]);
+    content.append(element('h3', project.headings?.features?.[languageIndex] || text('Yang dikerjakan', 'What it covers')));
     const list = element('ul');
     project.features[languageIndex].forEach(feature => list.append(element('li', feature)));
     content.append(list);
-    appendSection(text('Hasil & konteks', 'Outcome & context'), project.result[languageIndex]);
-    if (!project.repo) content.append(element('p', text('Proyek internal. Keterangan mengikuti catatan implementasi yang telah dipublikasikan; source code dan data internal tidak ditampilkan.', 'Internal project. Details follow published implementation notes; internal source code and data are not displayed.'), 'dialog-note'));
+    appendSection(project.headings?.result?.[languageIndex] || text('Hasil & konteks', 'Outcome & context'), project.result[languageIndex]);
+    if (!project.repo && !project.career) content.append(element('p', text('Proyek internal. Keterangan mengikuti catatan implementasi yang telah dipublikasikan; source code dan data internal tidak ditampilkan.', 'Internal project. Details follow published implementation notes; internal source code and data are not displayed.'), 'dialog-note'));
     const actions = element('div', '', 'dialog-actions');
     const primary = element('a', project.repo ? text('Lihat repo GitHub ↗', 'View GitHub repository ↗') : text('Baca catatan implementasi ↗', 'Read implementation notes ↗'), 'button primary');
     primary.href = project.repo ? `https://github.com/ahmadromiz1/${project.repo}` : en ? '/cerita-romiz/cerita-en.html#experience' : '/cerita-romiz/cerita.html#pengalaman';
-    if (project.id === 'monitoring') { primary.href = '#experience'; primary.textContent = text('Lihat pengalaman terkait ↓', 'View related experience ↓'); primary.addEventListener('click', () => dialog.close()); }
+    if (project.career || project.id === 'monitoring') { primary.href = '#experience'; primary.textContent = text('Lihat pengalaman terkait ↓', 'View related experience ↓'); primary.addEventListener('click', () => dialog.close()); }
     if (project.repo) { primary.target = '_blank'; primary.rel = 'noopener noreferrer'; }
     const discuss = element('a', text('Diskusikan proyek serupa ↗', 'Discuss a similar project ↗'), 'text-link');
+    if (project.career) discuss.textContent = text('Hubungi saya ↗', 'Get in touch ↗');
     discuss.href = `https://wa.me/6285742864832?text=${encodeURIComponent(text('Halo Romiz, saya ingin berdiskusi tentang ', 'Hi Romiz, I would like to discuss ') + project.title[languageIndex])}`;
     discuss.target = '_blank';
     discuss.rel = 'noopener noreferrer';

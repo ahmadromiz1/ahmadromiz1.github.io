@@ -1,5 +1,201 @@
 window.PORTFOLIO_PROJECTS = [
   {
+    "id": "bond-trade",
+    "category": "banking",
+    "tech": [
+      "Solution Analysis",
+      "APD"
+    ],
+    "repo": null,
+    "career": true,
+    "inProgress": true,
+    "headings": {
+      "problem": [
+        "Konteks proyek",
+        "Project context"
+      ],
+      "solution": [
+        "Peran & kontribusi",
+        "Role & contribution"
+      ],
+      "features": [
+        "Cakupan pengalaman",
+        "Experience scope"
+      ],
+      "result": [
+        "Status & konteks",
+        "Status & context"
+      ]
+    },
+    "visual": [
+      "APD",
+      "Bond Trade",
+      "In Progress"
+    ],
+    "title": [
+      "Bond Trade System",
+      "Bond Trade System"
+    ],
+    "summary": [
+      "Proyek pengelolaan dan perdagangan obligasi di APD Group, Bank Mandiri. Saat ini masih dalam pengembangan.",
+      "A bond management and trading project in Bank Mandiri’s APD Group. Currently in progress."
+    ],
+    "problem": [
+      "Proyek perbankan yang berfokus pada pengelolaan dan perdagangan obligasi dalam IT Application Delivery (APD) Group.",
+      "A banking project focused on bond management and trading within the IT Application Delivery (APD) Group."
+    ],
+    "solution": [
+      "Bekerja sebagai Solution Analyst — IT Wholesale Banking Development, APD Group, untuk mendukung proyek Bond Trade System.",
+      "Working as a Solution Analyst — IT Wholesale Banking Development, APD Group, supporting the Bond Trade System project."
+    ],
+    "result": [
+      "In Progress. Dikerjakan dalam peran APD sejak Oktober 2026.",
+      "In Progress. Part of the APD role since October 2026."
+    ],
+    "features": [
+      [
+        "Solution Analyst",
+        "IT Wholesale Banking Development — APD Group",
+        "Pengelolaan dan perdagangan obligasi"
+      ],
+      [
+        "Solution Analyst",
+        "IT Wholesale Banking Development — APD Group",
+        "Bond management and trading"
+      ]
+    ]
+  },
+  {
+    "id": "livin-merchant",
+    "category": "banking",
+    "tech": [
+      "Solution Analysis",
+      "SME"
+    ],
+    "repo": null,
+    "career": true,
+    "headings": {
+      "problem": [
+        "Konteks proyek",
+        "Project context"
+      ],
+      "solution": [
+        "Peran & kontribusi",
+        "Role & contribution"
+      ],
+      "features": [
+        "Cakupan pengalaman",
+        "Experience scope"
+      ],
+      "result": [
+        "Status & konteks",
+        "Status & context"
+      ]
+    },
+    "visual": [
+      "Mandiri",
+      "SME",
+      "Merchant"
+    ],
+    "title": [
+      "Livin’ Merchant",
+      "Livin’ Merchant"
+    ],
+    "summary": [
+      "Pengalaman proyek Livin’ Merchant sebagai Solution Analyst di IT Digital SME Channel Delivery, Bank Mandiri.",
+      "Livin’ Merchant project experience as a Solution Analyst in Bank Mandiri’s IT Digital SME Channel Delivery."
+    ],
+    "problem": [
+      "Livin’ Merchant merupakan salah satu proyek yang saya dukung di IT Digital SME Channel Delivery Department, Bank Mandiri.",
+      "Livin’ Merchant was one of the projects I supported in Bank Mandiri’s IT Digital SME Channel Delivery Department."
+    ],
+    "solution": [
+      "Berkontribusi sebagai Solution Analyst dalam cakupan tim SME untuk proyek Livin’ Merchant.",
+      "Contributed as a Solution Analyst within the SME team on the Livin’ Merchant project."
+    ],
+    "result": [
+      "Pengalaman proyek dalam penugasan SME, Juli–Oktober 2026.",
+      "Project experience during the SME assignment, July–October 2026."
+    ],
+    "features": [
+      [
+        "Solution Analyst",
+        "IT Digital SME Channel Delivery Department",
+        "Proyek Livin’ Merchant"
+      ],
+      [
+        "Solution Analyst",
+        "IT Digital SME Channel Delivery Department",
+        "Livin’ Merchant project"
+      ]
+    ]
+  },
+  {
+    "id": "livin-food",
+    "category": "banking",
+    "tech": [
+      "Solution Analysis",
+      "SME"
+    ],
+    "repo": null,
+    "career": true,
+    "headings": {
+      "problem": [
+        "Konteks proyek",
+        "Project context"
+      ],
+      "solution": [
+        "Peran & kontribusi",
+        "Role & contribution"
+      ],
+      "features": [
+        "Cakupan pengalaman",
+        "Experience scope"
+      ],
+      "result": [
+        "Status & konteks",
+        "Status & context"
+      ]
+    },
+    "visual": [
+      "Mandiri",
+      "SME",
+      "Food"
+    ],
+    "title": [
+      "Livin’ Food",
+      "Livin’ Food"
+    ],
+    "summary": [
+      "Pengalaman proyek Livin’ Food dalam penugasan Solution Analyst di tim SME, Bank Mandiri.",
+      "Livin’ Food project experience during the Solution Analyst assignment in Bank Mandiri’s SME team."
+    ],
+    "problem": [
+      "Livin’ Food merupakan salah satu proyek yang saya kerjakan dalam cakupan tim SME di Bank Mandiri.",
+      "Livin’ Food was one of the projects I worked on within Bank Mandiri’s SME team."
+    ],
+    "solution": [
+      "Berkontribusi sebagai Solution Analyst di IT Digital SME Channel Delivery Department untuk proyek Livin’ Food.",
+      "Contributed as a Solution Analyst in the IT Digital SME Channel Delivery Department on the Livin’ Food project."
+    ],
+    "result": [
+      "Pengalaman proyek dalam penugasan SME, Juli–Oktober 2026.",
+      "Project experience during the SME assignment, July–October 2026."
+    ],
+    "features": [
+      [
+        "Solution Analyst",
+        "IT Digital SME Channel Delivery Department",
+        "Proyek Livin’ Food"
+      ],
+      [
+        "Solution Analyst",
+        "IT Digital SME Channel Delivery Department",
+        "Livin’ Food project"
+      ]
+    ]
+  },
+  {
     "id": "journal",
     "category": "automation",
     "tech": [
